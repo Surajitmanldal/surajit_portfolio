@@ -58,7 +58,7 @@ const About = () => {
                     </div>
                     {/* Resume Button */}
                     <a
-                        href="https://drive.google.com/file/d/1J828rfXApsnWeCUCulM4wvxerMgNJLmf/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1oYK-cVhzWjXepPxxFAhjCgpKsRGV9yuK/view?usp=drive_link"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative inline-block text-white py-3 px-8 rounded-full mt-3 text-lg font-bold 
@@ -71,7 +71,7 @@ const About = () => {
                             background: 'linear-gradient(90deg, #8245ec, #a855f7)',
                         }}
                     >
-                        DOWNLOAD Resume
+                        DOWNLOAD CV
                     </a>
                 </div>
 
