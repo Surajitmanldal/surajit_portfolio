@@ -34,7 +34,5 @@ Hi! I'm **Surajit**, a frontend web developer and BCA student. This is my person
 ---
 ## 📷 Screenshots
 
-
-```markdown
 ![Home](./public/screenshots/home.png)
 
