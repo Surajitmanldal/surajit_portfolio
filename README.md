@@ -2,7 +2,7 @@
 
 Hi! I'm **Surajit**, a frontend web developer and BCA student. This is my personal portfolio built using **React** and modern web technologies. It showcases my projects, skills, and a bit about me!
 
-🔗 **Live Site**: [https://myportfolio-azure-chi.vercel.app/]
+🔗 **Live Site**: [https://surajitportfolio.vercel.app/]
 
 ---
 
