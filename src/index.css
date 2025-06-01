@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+* {
+    font-family: 'poppins', sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes blob {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        transform: translate(0px, 0px) scale(1) rotate(0deg);
+    }
+
+    33% {
+        border-radius: 70% 60% 40% 30%/50% 60% 30% 60%;
+        transform: translate(25px, -25px) scale(1.1) rotate(120deg);
+    }
+
+    66% {
+        border-radius: 30% 60% 70% 40%/50% 30% 60% 40%;
+        transform: translate(-25px, 25px) scale(0.9) rotate(240deg);
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        transform: translate(0px, 0px) scale(1) rotate(360deg);
+    }
+}
+
+.animate-blob {
+    animation: blob 20s ease-in-out infinite;
+}
+
+.animate-blob:hover {
+    animation-play-state: paused;
+}
+
+/* Creating multiple blob animations for variety */
+.animate-blob-slow {
+    animation: blob 25s ease-in-out infinite reverse;
+}
+
+.animate-blob-fast {
+    animation: blob 15s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse-slower {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+}
+
+.animate-spin-reverse-slower {
+    animation: spin-reverse-slower 20s linear infinite;
+}
+
+/* Add these utility classes to your existing Tailwind setup */
+@layer utilities {
+    .clip-path-custom {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 85% 95%, 70% 93%, 55% 96%, 40% 94%, 25% 97%, 0 95%);
+        background: linear-gradient(to bottom, #050414 0%, rgba(130, 69, 236, 0.1) 100%);
+        position: relative;
+        z-index: 1;
+        animation: waveClip 8s ease-in-out infinite;
+    }
+
+    @media (min-width: 640px) {
+        .clip-path-custom {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 93%, 70% 90%, 55% 94%, 40% 91%, 25% 95%, 0 92%);
+        }
+    }
+
+    .clip-path-hover {
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    .clip-path-hover:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 85% 96%, 70% 94%, 55% 97%, 40% 95%, 25% 98%, 0 96%);
+    }
+
+    @media (min-width: 640px) {
+        .clip-path-hover:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 87%, 85% 95%, 70% 92%, 55% 96%, 40% 93%, 25% 97%, 0 94%);
+        }
+    }
+
+    .clip-path-custom2 {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
+        background: linear-gradient(to bottom, #050414 0%, rgba(130, 69, 236, 0.15) 100%);
+        position: relative;
+        z-index: 1;
+        /* animation: waveClip2 10s ease-in-out infinite; */
+        padding-bottom: 8rem;
+    }
+
+    .clip-path-custom3 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%);
+        background: linear-gradient(to bottom, #050414 0%, rgba(130, 69, 236, 0.15) 100%);
+        position: relative;
+        z-index: 1;
+        /* animation: waveClip2 10s ease-in-out infinite; */
+        padding-bottom: 8rem;
+    }
+
+    @media (min-width: 640px) {
+        .clip-path-custom2 {
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 90% 94%, 75% 93%, 60% 94%, 45% 93%, 30% 94%, 15% 93%, 0 93%);
+            padding-bottom: 10rem;
+        }
+    }
+}
+
+@keyframes waveClip {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 85% 95%, 70% 93%, 55% 96%, 40% 94%, 25% 97%, 0 95%);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 85% 97%, 70% 95%, 55% 98%, 40% 96%, 25% 99%, 0 97%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 85% 95%, 70% 93%, 55% 96%, 40% 94%, 25% 97%, 0 95%);
+    }
+}
+
+@media (min-width: 640px) {
+    @keyframes waveClip {
+        0% {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 93%, 70% 90%, 55% 94%, 40% 91%, 25% 95%, 0 92%);
+        }
+
+        50% {
+            clip-path: polygon(0 0, 100% 0, 100% 87%, 85% 95%, 70% 88%, 55% 92%, 40% 89%, 25% 93%, 0 90%);
+        }
+
+        100% {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 93%, 70% 90%, 55% 94%, 40% 91%, 25% 95%, 0 92%);
+        }
+    }
+}
+
+@keyframes waveClip2 {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 90% 97%, 75% 96%, 60% 97%, 45% 96%, 30% 97%, 15% 96%, 0 96%);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 96%, 90% 98%, 75% 97%, 60% 98%, 45% 97%, 30% 98%, 15% 97%, 0 97%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 90% 97%, 75% 96%, 60% 97%, 45% 96%, 30% 97%, 15% 96%, 0 96%);
+    }
+}
+
+@media (min-width: 640px) {
+    @keyframes waveClip2 {
+        0% {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 90% 92%, 75% 89%, 60% 91%, 45% 88%, 30% 90%, 15% 88%, 0 89%);
+        }
+
+        50% {
+            clip-path: polygon(0 0, 100% 0, 100% 89%, 90% 93%, 75% 90%, 60% 92%, 45% 89%, 30% 91%, 15% 89%, 0 90%);
+        }
+
+        100% {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 90% 92%, 75% 89%, 60% 91%, 45% 88%, 30% 90%, 15% 88%, 0 89%);
+        }
+    }
+}
+
+@keyframes tiltFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate3d(1, 1, 0, 2deg);
+    }
+}
+
+.bg-image {
+    background: linear-gradient(38.73deg, rgba(169, 45, 159, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    background: linear-gradient(to right, rgba(17, 17, 17, 0.9), rgba(31, 31, 31, 0.9));
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(130, 69, 236, 0.1);
+    transform: translateY(-0.5rem);
+    opacity: 0;
+    transition: all 0.3s;
+    max-width: 200px;
+    z-index: 50;
+    width: max-content;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-0.25rem);
+}
