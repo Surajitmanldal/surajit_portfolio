@@ -30,11 +30,11 @@ const About = () => {
                             <span className="text-[#8245ec]">
                                 <Typewriter
                                     words={[
-                                        'Frontend Dev',
-                                        'React Dev',
-                                        'UI Designer',
-                                        'BCA Student',
-                                        'DSA Learner',
+                                        'Full Stack Developer',
+                                        'MERN Stack Developer',
+                                        'Frontend Specialist',
+                                        'Backend Learner',
+                                        'DSA Enthusiast',
                                     ]}
                                     loop={0}
                                     cursor
@@ -53,7 +53,7 @@ const About = () => {
                             border-l-2 border-[#8245ec] pl-4
                             hover:text-gray-300 transition-all duration-300
                             hover:scale-[1.02] hover:border-l-4">
-                            Currently pursuing BCA with a passion for web development and DSA. I build responsive and dynamic interfaces using React, JavaScript, and modern web technologies.
+                            BCA student and Full Stack (MERN) developer passionate about building real-world web applications. Skilled in creating responsive UIs, designing RESTful APIs, and implementing real-time features using modern technologies. Continuously improving problem-solving skills through Data Structures & Algorithms.
                         </p>
                     </div>
                     {/* Resume Button */}
