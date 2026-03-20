@@ -20,7 +20,23 @@ const getSkillDescription = (skillName) => {
         'Bootstrap': 'Responsive front-end component library',
         'C': 'Learning foundational programming and memory concepts',
         'Vercel': 'Deploying fast and scalable React applications',
-        'Netlify': 'Hosting static websites with CI/CD and custom domains'
+        'Netlify': 'Hosting static websites with CI/CD and custom domains',
+        'Node.js': 'Server-side JavaScript runtime for building scalable and high-performance backend applications',
+
+        'Express.js': 'Lightweight Node.js framework for building RESTful APIs, middleware handling, and server-side routing',
+
+        'MongoDB': 'NoSQL document database for storing and managing scalable application data',
+
+        'REST API': 'Designing and implementing RESTful APIs with proper routing, HTTP methods, and status codes',
+
+        'JWT': 'Secure authentication using JSON Web Tokens for user authorization and protected routes',
+
+        'bcrypt': 'Password hashing and security implementation for safe user authentication',
+
+        'Socket.io': 'Real-time bidirectional communication between client and server',
+
+        'Multer': 'Handling file uploads and multipart form data in Node.js applications',
+        'Render': 'Cloud deployment platform used to host backend APIs and web applications with automatic CI/CD and scalable infrastructure'
     };
     return descriptions[skillName] || `${skillName} - Essential tool in my development stack`;
 };

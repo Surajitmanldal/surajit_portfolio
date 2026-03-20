@@ -13,13 +13,15 @@ const Projects = () => {
     return (<section id='projects' className='relative py-10 pb-24 px-[4vw] md:px-[5vw] lg:px-[12vw] font-sans bg-gradient-to-b from-[#0a0a0a] via-[#1a1238] to-[#0a0a0a] overflow-hidden clip-path-custom3'>
         {/* section title */}
         <div className="relative z-10 text-center mb-16">
-            <h2 className="text-4xl font-bold text-white bg-clip-text bg-gradient-to-r from-purple-500 to-purple-300">PROJECTS</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white bg-clip-text bg-gradient-to-r from-purple-500 to-purple-300">PROJECTS</h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 mx-auto mt-4"></div>
             <p className="text-gray-400 mt-4 text-lg font-semibold">
                 A showcase of the projects I have worked on, highlighting my skills
                 and experience in various technologies
             </p>
-        </div>        {/* Projects grid */}
+        </div>
+
+        {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {projects.map((project, index) => (
                 <div

@@ -14,7 +14,15 @@ import vscodeLogo from './assets/tech_logo/vscode.png';
 import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
 import leetcodeLogo from './assets/tech_logo/leetcode.png'
-
+import nodejs from "./assets/tech_logo/nodejs.png"
+import express from "./assets/tech_logo/express.png"
+import mongodb from "./assets/tech_logo/mongodb.png"
+import jwt from "./assets/tech_logo/jwt.webp"
+import multer from "./assets/tech_logo/multer.jpg"
+import socket from "./assets/tech_logo/socket.png"
+import bcrypt from "./assets/tech_logo/bcrypt.jpg"
+import restApi from "./assets/tech_logo/restapi.jpg"
+import render from "./assets/tech_logo/render.png"
 
 // Education Section Logo's
 import bsaLogo from './assets/education_logo/bsa_logo.png';
@@ -27,7 +35,7 @@ import carVideo from './assets/work_logo/carVideo.mp4'
 import dictionaryVideo from './assets/work_logo/dictionaryVideo.mp4'
 import qrcodeVideo from './assets/work_logo/qrcodeVideo.mp4'
 import musicVideo from './assets/work_logo/musicVideo.mp4'
-
+import foodioImage from './assets/work_logo/foodioImage.png'
 export const SkillsInfo = [
     {
         title: 'Frontend',
@@ -39,6 +47,19 @@ export const SkillsInfo = [
             { name: 'Redux', logo: reduxLogo },
             { name: 'Tailwind CSS', logo: tailwindcssLogo },
             { name: 'Bootstrap', logo: bootstrapLogo },
+        ],
+    },
+    {
+        title: 'Backend',
+        skills: [
+            { name: 'Node.js', logo: nodejs },
+            { name: 'Express.js', logo: express },
+            { name: 'MongoDB', logo: mongodb },
+            { name: 'JWT', logo: jwt },
+            { name: 'bcrypt', logo: bcrypt },
+            { name: 'Socket.io', logo: socket },
+            { name: 'Multer', logo: multer },
+            { name: "REST API", logo: restApi }
         ],
     },
     {
@@ -58,6 +79,7 @@ export const SkillsInfo = [
             { name: 'VS Code', logo: vscodeLogo },
             { name: 'Vercel', logo: vercelLogo },
             { name: 'Netlify', logo: netlifyLogo },
+            { name: 'Render', logo: render }
         ],
     },
 ];
@@ -153,5 +175,15 @@ export const projects = [
         github: "https://github.com/Surajitmanldal/Music",
         webapp: "https://sura2242s.github.io/myMusic/",
     },
+    {
+        id: 6,
+        title: "🍔 Foodio – Scalable MERN Food Delivery System",
+        description:
+            "Foodio is a scalable full-stack food delivery platform built with the MERN stack. It enables users to browse menus, manage carts, and place orders with secure payment integration. The application uses WebSockets (Socket.io) for real-time order status updates and integrates map services for live delivery tracking. Designed with a modular backend and responsive frontend, the project highlights RESTful API development, real-time communication, and production-level application architecture.",
+        image: foodioImage,
+        tags: ["MongoDB", "Express JS", "React JS", "Node JS", "Redux Toolkit", "Socket.io", "Razor Pay Payment Gateway API", "LeafLet Map API"],
+        github: "https://github.com/your-username/foodio",
+        webapp: "https://foodio-food.onrender.com/",
+    }
 
 ];  
