@@ -5,24 +5,48 @@ import javascriptLogo from './assets/tech_logo/javascript.png';
 import reactjsLogo from './assets/tech_logo/reactjs.png';
 import reduxLogo from './assets/tech_logo/redux.png';
 import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
-import bootstrapLogo from './assets/tech_logo/bootstrap.png';
+
 import cLogo from './assets/tech_logo/c.png';
 import javaLogo from './assets/tech_logo/java.png';
+
 import gitLogo from './assets/tech_logo/git.png';
 import githubLogo from './assets/tech_logo/github.png';
 import vscodeLogo from './assets/tech_logo/vscode.png';
-import netlifyLogo from './assets/tech_logo/netlify.png';
+
 import vercelLogo from './assets/tech_logo/vercel.png';
-import leetcodeLogo from './assets/tech_logo/leetcode.png'
-import nodejs from "./assets/tech_logo/nodejs.png"
-import express from "./assets/tech_logo/express.png"
-import mongodb from "./assets/tech_logo/mongodb.png"
-import jwt from "./assets/tech_logo/jwt.webp"
-import multer from "./assets/tech_logo/multer.jpg"
-import socket from "./assets/tech_logo/socket.png"
-import bcrypt from "./assets/tech_logo/bcrypt.jpg"
-import restApi from "./assets/tech_logo/restapi.jpg"
-import render from "./assets/tech_logo/render.png"
+import render from './assets/tech_logo/render.png';
+
+import leetcodeLogo from './assets/tech_logo/leetcode.png';
+
+import nodejs from './assets/tech_logo/nodejs.png';
+import express from './assets/tech_logo/express.png';
+import mongodb from './assets/tech_logo/mongodb.png';
+import jwt from './assets/tech_logo/jwt.webp';
+import multer from './assets/tech_logo/multer.jpg';
+import socket from './assets/tech_logo/socket.png';
+import bcrypt from './assets/tech_logo/bcrypt.jpg';
+import restApi from './assets/tech_logo/restapi.jpg';
+
+import nextjsLogo from './assets/tech_logo/nextjs.webp';
+import typescriptLogo from './assets/tech_logo/typescript.png';
+
+import postgresqlLogo from './assets/tech_logo/postgre.png';
+import prismaLogo from './assets/tech_logo/prisma.png';
+import supabaseLogo from './assets/tech_logo/supabase.webp';
+import cloudinaryLogo from './assets/tech_logo/cloudinary.png';
+import nextAuthLogo from './assets/tech_logo/nextauth.jpg';
+
+import awsLogo from './assets/tech_logo/aws.png';
+import ec2Logo from './assets/tech_logo/ec2.webp';
+import s3Logo from './assets/tech_logo/s3.webp';
+import lambdaLogo from './assets/tech_logo/lambda.png';
+import apiGatewayLogo from './assets/tech_logo/api-gateway.png';
+import dynamodbLogo from './assets/tech_logo/dynamodb.png';
+import bedrockLogo from './assets/tech_logo/bedrock.jpg';
+
+import razorpayLogo from './assets/tech_logo/razorpay.png';
+import leafletLogo from './assets/tech_logo/leaflet.jpg';
+import wireguardLogo from './assets/tech_logo/wireguard.png';
 
 // Education Section Logo's
 import bsaLogo from './assets/education_logo/bsa_logo.png';
@@ -40,46 +64,75 @@ export const SkillsInfo = [
     {
         title: 'Frontend',
         skills: [
+            { name: 'React JS', logo: reactjsLogo },
+            { name: 'Next.js', logo: nextjsLogo },
+            { name: 'TypeScript', logo: typescriptLogo },
+            { name: 'JavaScript', logo: javascriptLogo },
+            { name: 'Tailwind CSS', logo: tailwindcssLogo },
+            { name: 'Redux Toolkit', logo: reduxLogo },
             { name: 'HTML', logo: htmlLogo },
             { name: 'CSS', logo: cssLogo },
-            { name: 'JavaScript', logo: javascriptLogo },
-            { name: 'React JS', logo: reactjsLogo },
-            { name: 'Redux', logo: reduxLogo },
-            { name: 'Tailwind CSS', logo: tailwindcssLogo },
-            { name: 'Bootstrap', logo: bootstrapLogo },
         ],
     },
+
     {
         title: 'Backend',
         skills: [
             { name: 'Node.js', logo: nodejs },
             { name: 'Express.js', logo: express },
-            { name: 'MongoDB', logo: mongodb },
+            { name: 'REST API', logo: restApi },
+            { name: 'Socket.io', logo: socket },
             { name: 'JWT', logo: jwt },
             { name: 'bcrypt', logo: bcrypt },
-            { name: 'Socket.io', logo: socket },
             { name: 'Multer', logo: multer },
-            { name: "REST API", logo: restApi }
         ],
     },
+
     {
-        title: 'Languages & Programming',
+        title: 'Database & Auth',
         skills: [
-            { name: 'C', logo: cLogo },
-            { name: 'Java', logo: javaLogo },
-            { name: 'JavaScript', logo: javascriptLogo },
-            { name: 'DSA', logo: leetcodeLogo }
+            { name: 'MongoDB', logo: mongodb },
+            { name: 'PostgreSQL', logo: postgresqlLogo },
+            { name: 'Prisma', logo: prismaLogo },
+            { name: 'Supabase', logo: supabaseLogo },
+            { name: 'Cloudinary', logo: cloudinaryLogo },
+            { name: 'NextAuth', logo: nextAuthLogo },
         ],
     },
+
     {
-        title: 'Tools',
+        title: 'Cloud & Deployment',
+        skills: [
+            { name: 'AWS', logo: awsLogo },
+            { name: 'EC2', logo: ec2Logo },
+            { name: 'S3', logo: s3Logo },
+            { name: 'Lambda', logo: lambdaLogo },
+            { name: 'API Gateway', logo: apiGatewayLogo },
+            { name: 'DynamoDB', logo: dynamodbLogo },
+            { name: 'Bedrock', logo: bedrockLogo },
+            { name: 'Vercel', logo: vercelLogo },
+            { name: 'Render', logo: render },
+        ],
+    },
+
+    {
+        title: 'Tools & Services',
         skills: [
             { name: 'Git', logo: gitLogo },
             { name: 'GitHub', logo: githubLogo },
             { name: 'VS Code', logo: vscodeLogo },
-            { name: 'Vercel', logo: vercelLogo },
-            { name: 'Netlify', logo: netlifyLogo },
-            { name: 'Render', logo: render }
+            { name: 'Razorpay', logo: razorpayLogo },
+            { name: 'Leaflet', logo: leafletLogo },
+            { name: 'WireGuard', logo: wireguardLogo },
+        ],
+    },
+
+    {
+        title: 'Languages & DSA',
+        skills: [
+            { name: 'Java', logo: javaLogo },
+            { name: 'C', logo: cLogo },
+            { name: 'DSA', logo: leetcodeLogo },
         ],
     },
 ];

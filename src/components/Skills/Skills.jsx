@@ -6,38 +6,133 @@ import Tooltip from '../Tooltip/Tooltip'
 
 const getSkillDescription = (skillName) => {
     const descriptions = {
-        'HTML': 'Semantic HTML5, Accessibility best practices, and modern markup standards',
-        'CSS': 'Modern CSS3, Flexbox, Grid, Animations, and Responsive Design',
-        'JavaScript': 'ES6+, DOM manipulation, Async/Await, and modern JavaScript practices',
-        'React JS': 'React Hooks, Context API, Component lifecycles, and State Management',
-        'Tailwind CSS': 'Utility-first CSS framework for rapid UI development',
-        'Git': 'Version control, branching strategies, and collaborative development',
-        'GitHub': 'Project hosting, CI/CD, and collaborative development platform',
-        'Java': 'Object-Oriented Programming, Collections Framework, and Core Java concepts',
-        'DSA': 'Click to view my LeetCode profile - Solving DSA problems in Java',
-        'VS Code': 'Preferred IDE with productivity-enhancing extensions',
-        'Redux': 'State management for complex React applications',
-        'Bootstrap': 'Responsive front-end component library',
-        'C': 'Learning foundational programming and memory concepts',
-        'Vercel': 'Deploying fast and scalable React applications',
-        'Netlify': 'Hosting static websites with CI/CD and custom domains',
-        'Node.js': 'Server-side JavaScript runtime for building scalable and high-performance backend applications',
+        // Frontend
+        'React JS':
+            'Building component-based interfaces with Hooks, Context API, reusable components, and modern React patterns',
 
-        'Express.js': 'Lightweight Node.js framework for building RESTful APIs, middleware handling, and server-side routing',
+        'Next.js':
+            'Building full-stack applications with App Router, Server Components, API routes, dynamic routing, and modern rendering patterns',
 
-        'MongoDB': 'NoSQL document database for storing and managing scalable application data',
+        'TypeScript':
+            'Type-safe JavaScript development with interfaces, types, generics, and typed React applications',
 
-        'REST API': 'Designing and implementing RESTful APIs with proper routing, HTTP methods, and status codes',
+        'JavaScript':
+            'ES6+, asynchronous programming, promises, DOM manipulation, APIs, and modern JavaScript practices',
 
-        'JWT': 'Secure authentication using JSON Web Tokens for user authorization and protected routes',
+        'Tailwind CSS':
+            'Utility-first CSS for building responsive and modern user interfaces',
 
-        'bcrypt': 'Password hashing and security implementation for safe user authentication',
+        'HTML':
+            'Semantic HTML5, accessibility, forms, and modern markup standards',
 
-        'Socket.io': 'Real-time bidirectional communication between client and server',
+        'CSS':
+            'Responsive layouts, Flexbox, Grid, animations, transitions, and modern CSS',
 
-        'Multer': 'Handling file uploads and multipart form data in Node.js applications',
-        'Render': 'Cloud deployment platform used to host backend APIs and web applications with automatic CI/CD and scalable infrastructure'
-    };
+        'Redux Toolkit':
+            'State management for React applications using slices, async thunks, and RTK Query',
+
+        // Backend
+        'Node.js':
+            'Server-side JavaScript runtime used for building scalable backend services and APIs',
+
+        'Express.js':
+            'Node.js framework for REST APIs, middleware, routing, authentication, and server-side logic',
+
+        'REST API':
+            'Designing APIs with HTTP methods, status codes, routing, validation, and structured responses',
+
+        'Socket.io':
+            'Real-time bidirectional communication for live updates and event-driven applications',
+
+        'JWT':
+            'Token-based authentication for securing APIs and protected routes',
+
+        'bcrypt':
+            'Secure password hashing for user authentication',
+
+        'Multer':
+            'Handling multipart form data and file uploads in Node.js applications',
+
+        // Database
+        'MongoDB':
+            'NoSQL document database used for storing and managing application data',
+
+        'PostgreSQL':
+            'Relational database used for structured application data and SQL-based queries',
+
+        'Prisma':
+            'Type-safe ORM for working with relational databases from TypeScript applications',
+
+        'Supabase':
+            'Backend platform providing PostgreSQL database, authentication, and developer tools',
+
+        'Cloudinary':
+            'Cloud-based media storage and image management used for application uploads',
+
+        'NextAuth':
+            'Authentication solution for Next.js applications with session and credential-based authentication',
+
+        // AWS
+        'AWS':
+            'Cloud platform used for deploying applications and building serverless and cloud-based systems',
+
+        'EC2':
+            'Cloud virtual servers used for hosting applications and configuring a WireGuard VPN server',
+
+        'S3':
+            'Object storage used for application uploads, documents, and cloud-based file storage',
+
+        'Lambda':
+            'Serverless compute service used to run backend functions without managing servers',
+
+        'API Gateway':
+            'Managed service for creating and exposing HTTP APIs that connect with backend services',
+
+        'DynamoDB':
+            'NoSQL database used for building scalable serverless applications',
+
+        'Bedrock':
+            'AWS service used to integrate foundation models into AI-powered applications',
+
+        // Deployment
+        'Vercel':
+            'Deployment platform used for hosting Next.js and modern frontend applications',
+
+        'Render':
+            'Cloud platform used for deploying backend APIs and full-stack applications',
+
+        'Netlify':
+            'Deployment and hosting platform used for frontend applications',
+
+        // Tools
+        'Git':
+            'Version control system for tracking changes and managing development workflows',
+
+        'GitHub':
+            'Platform for source code hosting, collaboration, version control, and project management',
+
+        'VS Code':
+            'Primary development environment with extensions and tooling for modern web development',
+
+        'Razorpay':
+            'Payment gateway integration used for handling online payments in web applications',
+
+        'Leaflet':
+            'JavaScript mapping library used for interactive maps and location-based features',
+
+        'WireGuard':
+            'Modern VPN protocol used to build and manage secure VPN connections',
+
+        // Programming
+        'Java':
+            'Object-oriented programming, collections, exception handling, and DSA practice',
+
+        'C':
+            'Programming fundamentals, memory concepts, pointers, and procedural programming',
+
+        'DSA':
+            'Practicing data structures and algorithms in Java to improve problem-solving skills',
+    }
     return descriptions[skillName] || `${skillName} - Essential tool in my development stack`;
 };
 
@@ -65,77 +160,241 @@ const Skills = () => {
                 <div className='w-24 h-1 bg-gradient-to-r from-[#8245ec] to-purple-500 mx-auto mt-2 rounded-full'></div>
                 <p className='relative text-gray-400 mt-6 font-medium text-lg max-w-3xl mx-auto leading-relaxed
                     animate-[slideIn_0.5s_ease-out_0.2s_both]'>
-                    I am a passionate and curious learner currently pursuing a BCA degree, with a strong interest in
-                    front-end web development. My focus is on building responsive and interactive user interfaces
-                    using HTML, CSS, JavaScript, and React.
+                    I build full-stack web applications using React, Next.js, TypeScript,
+                    Node.js, and modern cloud technologies. My experience includes
+                    authentication, REST APIs, real-time applications, database systems,
+                    AWS services, and AI-powered applications.
                 </p>
             </div>
 
             {/* Skills categories */}
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8'>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-7">
                 {SkillsInfo.map((category, index) => (
-                    <div key={category.title}
-                        className='relative group'
+                    <div
+                        key={category.title}
+                        className="relative group h-full"
                         style={{
-                            animation: `fadeIn 0.5s ease-out forwards ${index * 0.2}s`
+                            animation: `fadeIn 0.6s ease-out forwards ${index * 0.12}s`,
                         }}
                     >
                         <Tilt
                             className="h-full"
-                            tiltMaxAngleX={10}
-                            tiltMaxAngleY={10}
-                            perspective={1000}
+                            tiltMaxAngleX={8}
+                            tiltMaxAngleY={8}
+                            perspective={1200}
                             scale={1.02}
-                            transitionSpeed={1500}
+                            transitionSpeed={1200}
                             gyroscope={true}
                         >
-                            <div className='h-full bg-gradient-to-b from-gray-900/80 to-gray-900/60
-                                backdrop-blur-xl px-4 sm:px-6 py-6 rounded-2xl
-                                border border-gray-700/30
-                                group-hover:border-[#8245ec]/30 transition-all duration-500
-                                shadow-[0_0_20px_1px_rgba(130,69,236,0.1)]
-                                group-hover:shadow-[0_0_25px_2px_rgba(130,69,236,0.2)]'>
+                            <div
+                                className="
+                        relative h-full overflow-hidden
+                        rounded-3xl
+                        border border-white/[0.08]
+                        bg-gradient-to-br
+                        from-white/[0.06]
+                        via-[#111116]/80
+                        to-[#0c0c10]/90
+                        backdrop-blur-2xl
+                        p-5 sm:p-6
+                        transition-all duration-500
 
-                                <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-center
-                                    bg-gradient-to-r from-[#8245ec] to-purple-400 text-transparent bg-clip-text">
-                                    {category.title}
-                                </h3>
+                        group-hover:border-[#8245ec]/40
+                        group-hover:-translate-y-1
 
-                                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        shadow-[0_10px_40px_rgba(0,0,0,0.2)]
+                        group-hover:shadow-[0_20px_50px_rgba(130,69,236,0.15)]
+                    "
+                            >
+                                {/* Decorative glow */}
+                                <div
+                                    className="
+                            absolute -top-24 -right-24
+                            w-48 h-48
+                            rounded-full
+                            bg-[#8245ec]/10
+                            blur-3xl
+                            opacity-0
+                            group-hover:opacity-100
+                            transition-opacity duration-700
+                            pointer-events-none
+                        "
+                                />
+
+                                <div
+                                    className="
+                            absolute -bottom-20 -left-20
+                            w-40 h-40
+                            rounded-full
+                            bg-purple-500/5
+                            blur-3xl
+                            pointer-events-none
+                        "
+                                />
+
+                                {/* Top accent line */}
+                                <div
+                                    className="
+                            absolute top-0 left-8 right-8
+                            h-[1px]
+                            bg-gradient-to-r
+                            from-transparent
+                            via-[#8245ec]/60
+                            to-transparent
+                            opacity-50
+                            group-hover:opacity-100
+                            transition-opacity duration-500
+                        "
+                                />
+
+                                {/* Category Header */}
+                                <div className="relative flex items-center gap-3 mb-6">
+                                    {/* Icon / number */}
+                                    <div
+                                        className="
+                                flex items-center justify-center
+                                w-10 h-10
+                                rounded-xl
+                                border border-[#8245ec]/20
+                                bg-[#8245ec]/10
+                                text-[#a78bfa]
+                                text-sm font-bold
+                                shadow-[0_0_20px_rgba(130,69,236,0.1)]
+                            "
+                                    >
+                                        {String(index + 1).padStart(2, '0')}
+                                    </div>
+
+                                    <div>
+                                        <h3
+                                            className="
+                                    text-xl sm:text-2xl
+                                    font-bold
+                                    tracking-tight
+                                    text-white
+                                "
+                                        >
+                                            {category.title}
+                                        </h3>
+
+                                        <div
+                                            className="
+                                    mt-1 h-[2px] w-10
+                                    rounded-full
+                                    bg-gradient-to-r
+                                    from-[#8245ec]
+                                    to-purple-400
+                                    group-hover:w-16
+                                    transition-all duration-500
+                                "
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Skills */}
+                                <div className="relative grid grid-cols-2 gap-3">
                                     {category.skills.map((skill, skillIndex) => (
-                                        <Tooltip key={skill.name} content={getSkillDescription(skill.name)}>
+                                        <Tooltip
+                                            key={skill.name}
+                                            content={getSkillDescription(skill.name)}
+                                        >
                                             <div
-                                                className="relative flex items-center justify-start space-x-2 
-                                                    bg-gray-800/30 backdrop-blur-sm
-                                                    border border-gray-700/30 hover:border-[#8245ec]/30
-                                                    rounded-2xl py-2 px-3 group/skill
-                                                    transform transition-all duration-300 hover:scale-105
-                                                    hover:shadow-[0_0_15px_rgba(130,69,236,0.2)]
-                                                    min-w-0 cursor-pointer"
+                                                className="
+                                        relative
+                                        flex items-center
+                                        gap-2.5
+                                        min-w-0
+                                        px-3 py-2.5
+                                        rounded-xl
+
+                                        border border-white/[0.07]
+                                        bg-white/[0.025]
+                                        backdrop-blur-sm
+
+                                        cursor-pointer
+
+                                        transition-all duration-300
+
+                                        hover:bg-[#8245ec]/10
+                                        hover:border-[#8245ec]/35
+                                        hover:-translate-y-1
+                                        hover:shadow-[0_8px_20px_rgba(130,69,236,0.12)]
+                                    "
                                                 style={{
-                                                    animation: `slideIn 0.3s ease-out forwards ${index * 0.2 + skillIndex * 0.1}s`
+                                                    animation: `slideIn 0.35s ease-out forwards ${index * 0.15 +
+                                                        skillIndex * 0.06
+                                                        }s`,
                                                 }}
                                             >
-                                                <img
-                                                    src={skill.logo}
-                                                    alt={`${skill.name} logo`}
-                                                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain flex-shrink-0
-                                                        transform transition-transform duration-300
-                                                        group-hover/skill:scale-110"
+                                                {/* Skill glow */}
+                                                <div
+                                                    className="
+                                            absolute inset-0
+                                            rounded-xl
+                                            bg-[#8245ec]/5
+                                            opacity-0
+                                            hover:opacity-100
+                                            transition-opacity duration-300
+                                            pointer-events-none
+                                        "
                                                 />
+
+                                                {/* Logo container */}
+                                                <div
+                                                    className="
+                                            relative
+                                            flex-shrink-0
+                                            flex items-center justify-center
+                                            w-8 h-8
+                                            rounded-lg
+                                            border border-white/[0.06]
+                                            bg-black/20
+                                            group-hover/skill:bg-[#8245ec]/10
+                                            transition-all duration-300
+                                        "
+                                                >
+                                                    <img
+                                                        src={skill.logo}
+                                                        alt={`${skill.name} logo`}
+                                                        className="
+                                                w-5 h-5
+                                                object-contain
+                                                transition-transform duration-300
+                                                hover:scale-110
+                                            "
+                                                    />
+                                                </div>
+
+                                                {/* Skill name */}
                                                 {skill.name.toLowerCase() === 'dsa' ? (
                                                     <a
                                                         href="https://leetcode.com/u/surajitmandal23/"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-xs sm:text-sm text-gray-300 group-hover/skill:text-white
-                                                            transition-colors duration-300 truncate hover:text-[#8245ec]"
+                                                        className="
+                                                relative
+                                                text-xs sm:text-sm
+                                                font-medium
+                                                text-gray-400
+                                                truncate
+                                                hover:text-[#a78bfa]
+                                                transition-colors duration-300
+                                            "
                                                     >
                                                         {skill.name}
                                                     </a>
                                                 ) : (
-                                                    <span className="text-xs sm:text-sm text-gray-300 group-hover/skill:text-white
-                                                        transition-colors duration-300 truncate">
+                                                    <span
+                                                        className="
+                                                relative
+                                                text-xs sm:text-sm
+                                                font-medium
+                                                text-gray-400
+                                                truncate
+                                                group-hover/skill:text-gray-200
+                                                transition-colors duration-300
+                                            "
+                                                    >
                                                         {skill.name}
                                                     </span>
                                                 )}
@@ -143,6 +402,22 @@ const Skills = () => {
                                         </Tooltip>
                                     ))}
                                 </div>
+
+                                {/* Bottom decorative gradient */}
+                                <div
+                                    className="
+                            absolute bottom-0 left-1/2
+                            -translate-x-1/2
+                            w-1/2 h-[1px]
+                            bg-gradient-to-r
+                            from-transparent
+                            via-[#8245ec]/30
+                            to-transparent
+                            group-hover:w-3/4
+                            group-hover:via-[#8245ec]/60
+                            transition-all duration-500
+                        "
+                                />
                             </div>
                         </Tilt>
                     </div>
