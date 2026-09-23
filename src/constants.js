@@ -60,6 +60,9 @@ import dictionaryVideo from './assets/work_logo/dictionaryVideo.mp4'
 import qrcodeVideo from './assets/work_logo/qrcodeVideo.mp4'
 import musicVideo from './assets/work_logo/musicVideo.mp4'
 import foodioImage from './assets/work_logo/foodioImage.png'
+import nextGuardVideo from './assets/work_logo/nexGuardVideo.mp4'
+import virtualAssistantVideo from './assets/work_logo/virtualAssistantVideo.mp4'
+
 export const SkillsInfo = [
     {
         title: 'Frontend',
@@ -170,73 +173,134 @@ export const education = [
 export const projects = [
     {
         id: 0,
-        title: "🤖 Survis AI – Your Smart Chat Companion",
+        title: "🛡️ NexGuard – VPN Management Platform",
         description:
-            "Survis AI is an intelligent chatbot built using the Gemini API that enables real-time, human-like conversations. Designed for both assistance and casual interaction, Survis AI processes user input and responds with contextually relevant answers. The project demonstrates how large language models can be integrated into a modern web interface to build interactive and responsive applications.",
-        image: survisVideo,
-        tags: ["HTML5", "CSS3", "JavaScript", "React JS", "Redux Toolkit", "Gemini API"],
-        github: "https://github.com/Surajitmanldal/Survis-AI",
-        webapp: "https://survisai.netlify.app/",
+            "NexGuard is a full-stack VPN management platform that allows users to create, manage, and configure VPN devices through a web interface. It uses WireGuard on an AWS EC2 server to dynamically generate VPN keys, configure peers, and provide downloadable client configurations. The project demonstrates secure authentication, server-side automation, database management, and integration between a Next.js application and a Linux-based VPN server.",
+        image: nextGuardVideo,
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Prisma",
+            "Supabase",
+            "AWS EC2",
+            "WireGuard",
+            "NextAuth",
+        ],
+        github: "YOUR_NEXGUARD_GITHUB_URL",
+        webapp: "https://nextguard.vercel.app/",
     },
+
     {
         id: 1,
-        title: "💹 Crypto Info Web App (React)",
+        title: "🍔 Foodio – Full Stack Food Delivery Platform",
         description:
-            "A sleek and modern cryptocurrency web application built with React, featuring real-time crypto market data, dynamic routing, responsive design, and elegant animations. Perfect for learning frontend development, API integration, and clean UI architecture.",
-        image: cryptoVideo,
-        tags: ["React JS", "React Router DOM (v6+)", "Crypto API", "HTML", "CSS", "JavaScript"],
-        github: "https://github.com/Surajitmanldal/Crypto-place",
-        webapp: "https://crypto-place-alw8.vercel.app/",
+            "Foodio is a full-stack food delivery platform built with the MERN stack, supporting separate user, restaurant owner, and delivery partner roles. It includes JWT authentication, food and order management, real-time order updates using Socket.IO, location-based delivery assignment, OTP verification, online payments, and image management with Cloudinary. The project demonstrates how multiple backend services and real-time features can be combined to build a complete production-style web application.",
+        image: foodioImage,
+        tags: [
+            "React JS",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Redux Toolkit",
+            "Socket.IO",
+            "Cloudinary",
+            "Razorpay",
+            "Leaflet",
+        ],
+        github: "https://github.com/Surajitmanldal/Foodio",
+        webapp: "https://foodio-food.onrender.com/",
     },
+
     {
         id: 2,
-        title: "🚗 Car Rental Website",
+        title: "🤖 Virtual Assistant – AI Voice Assistant",
         description:
-            "A simple and visually appealing Car Rental website built using HTML, CSS, and JavaScript. This project showcases a smooth, animated UI where users can explore rental car options, view features, and interact with a clean responsive layout — ideal for beginners in frontend development.",
-        image: carVideo,
-        tags: ["HTML5", "CSS3", "JavaScript (Vanilla)", "Responsive Design", "Mobile-Friendly"],
-        github: "https://github.com/Surajitmanldal/Car-Rental",
-        webapp: "https://car-rental-applications.netlify.app/",
+            "Virtual Assistant is an AI-powered web application that allows users to interact with an intelligent assistant through text and voice commands. Built with React and Node.js, the application integrates Gemini AI for generating responses and uses browser speech technologies to support voice-based interaction. It also includes authentication, cloud image storage, and a responsive interface designed for an interactive assistant experience.",
+        image: virtualAssistantVideo,
+        tags: [
+            "React JS",
+            "Tailwind CSS",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT",
+            "Cloudinary",
+            "Gemini API",
+            "Web Speech API",
+        ],
+        github: "https://github.com/Surajitmanldal/virtualAssistant",
+        webapp: "https://virtualassistant-samk.onrender.com/",
     },
-    {
-        id: 3,
-        title: "Dictionary App",
-        description:
-            "This is a simple and interactive Dictionary web application built using HTML, CSS, and JavaScript. Users can search for any English word to get its meaning, pronunciation, part of speech, and example usage. The app fetches real-time data from a dictionary API and displays it in a clean and user-friendly interface. It also includes additional features like text-to-speech pronunciation and responsive design for a smooth experience across all devices.",
-        image: dictionaryVideo,
-        tags: ["HTML5", "CSS3", "Fetch API", "Java Script", "Responsive Design", "Theme Toggle"],
-        github: "https://github.com/Surajitmanldal/Dictionary-App",
-        webapp: "https://dictionaryappbysurajit.netlify.app/",
-    },
-    {
-        id: 4,
-        title: "QR Code-Generator",
-        description:
-            "This is a simple and responsive QR Code Generator web application built using HTML, CSS, and JavaScript. Users can enter any text or URL, and the app will instantly generate a corresponding QR code",
-        image: qrcodeVideo,
-        tags: ["JavaScript", "HTML5", "CSS", "Fetch API", "Responsive Design", "Event Handling"],
-        github: "https://github.com/Surajitmanldal/QR-Code-Generator",
-        webapp: "https://qr-code-generator-by-surajit.netlify.app/",
-    },
-    {
-        id: 5,
-        title: "Music Web-Application",
-        description:
-            "A sleek and responsive Music Player Web App built using HTML, CSS, and JavaScript that allows users to play, pause, skip, and control music playback from a curated playlist. Designed with a focus on clean UI and smooth user experience, it mimics the functionality of basic music streaming apps.",
-        image: musicVideo,
-        tags: ["HTML", "CSS", "JavaScript", "Music controllar"],
-        github: "https://github.com/Surajitmanldal/Music",
-        webapp: "https://sura2242s.github.io/myMusic/",
-    },
-    {
-        id: 6,
-        title: "🍔 Foodio – Scalable MERN Food Delivery System",
-        description:
-            "Foodio is a scalable full-stack food delivery platform built with the MERN stack. It enables users to browse menus, manage carts, and place orders with secure payment integration. The application uses WebSockets (Socket.io) for real-time order status updates and integrates map services for live delivery tracking. Designed with a modular backend and responsive frontend, the project highlights RESTful API development, real-time communication, and production-level application architecture.",
-        image: foodioImage,
-        tags: ["MongoDB", "Express JS", "React JS", "Node JS", "Redux Toolkit", "Socket.io", "Razor Pay Payment Gateway API", "LeafLet Map API"],
-        github: "https://github.com/your-username/foodio",
-        webapp: "https://foodio-food.onrender.com/",
-    }
 
-];  
+
+];
+//  {
+//         id: 0,
+//         title: "🤖 Survis AI – Your Smart Chat Companion",
+//         description:
+//             "Survis AI is an intelligent chatbot built using the Gemini API that enables real-time, human-like conversations. Designed for both assistance and casual interaction, Survis AI processes user input and responds with contextually relevant answers. The project demonstrates how large language models can be integrated into a modern web interface to build interactive and responsive applications.",
+//         image: survisVideo,
+//         tags: ["HTML5", "CSS3", "JavaScript", "React JS", "Redux Toolkit", "Gemini API"],
+//         github: "https://github.com/Surajitmanldal/Survis-AI",
+//         webapp: "https://survisai.netlify.app/",
+//     },
+//     {
+//         id: 1,
+//         title: "💹 Crypto Info Web App (React)",
+//         description:
+//             "A sleek and modern cryptocurrency web application built with React, featuring real-time crypto market data, dynamic routing, responsive design, and elegant animations. Perfect for learning frontend development, API integration, and clean UI architecture.",
+//         image: cryptoVideo,
+//         tags: ["React JS", "React Router DOM (v6+)", "Crypto API", "HTML", "CSS", "JavaScript"],
+//         github: "https://github.com/Surajitmanldal/Crypto-place",
+//         webapp: "https://crypto-place-alw8.vercel.app/",
+//     },
+//     {
+//         id: 2,
+//         title: "🚗 Car Rental Website",
+//         description:
+//             "A simple and visually appealing Car Rental website built using HTML, CSS, and JavaScript. This project showcases a smooth, animated UI where users can explore rental car options, view features, and interact with a clean responsive layout — ideal for beginners in frontend development.",
+//         image: carVideo,
+//         tags: ["HTML5", "CSS3", "JavaScript (Vanilla)", "Responsive Design", "Mobile-Friendly"],
+//         github: "https://github.com/Surajitmanldal/Car-Rental",
+//         webapp: "https://car-rental-applications.netlify.app/",
+//     },
+//     {
+//         id: 3,
+//         title: "Dictionary App",
+//         description:
+//             "This is a simple and interactive Dictionary web application built using HTML, CSS, and JavaScript. Users can search for any English word to get its meaning, pronunciation, part of speech, and example usage. The app fetches real-time data from a dictionary API and displays it in a clean and user-friendly interface. It also includes additional features like text-to-speech pronunciation and responsive design for a smooth experience across all devices.",
+//         image: dictionaryVideo,
+//         tags: ["HTML5", "CSS3", "Fetch API", "Java Script", "Responsive Design", "Theme Toggle"],
+//         github: "https://github.com/Surajitmanldal/Dictionary-App",
+//         webapp: "https://dictionaryappbysurajit.netlify.app/",
+//     },
+//     {
+//         id: 4,
+//         title: "QR Code-Generator",
+//         description:
+//             "This is a simple and responsive QR Code Generator web application built using HTML, CSS, and JavaScript. Users can enter any text or URL, and the app will instantly generate a corresponding QR code",
+//         image: qrcodeVideo,
+//         tags: ["JavaScript", "HTML5", "CSS", "Fetch API", "Responsive Design", "Event Handling"],
+//         github: "https://github.com/Surajitmanldal/QR-Code-Generator",
+//         webapp: "https://qr-code-generator-by-surajit.netlify.app/",
+//     },
+//     {
+//         id: 5,
+//         title: "Music Web-Application",
+//         description:
+//             "A sleek and responsive Music Player Web App built using HTML, CSS, and JavaScript that allows users to play, pause, skip, and control music playback from a curated playlist. Designed with a focus on clean UI and smooth user experience, it mimics the functionality of basic music streaming apps.",
+//         image: musicVideo,
+//         tags: ["HTML", "CSS", "JavaScript", "Music controllar"],
+//         github: "https://github.com/Surajitmanldal/Music",
+//         webapp: "https://sura2242s.github.io/myMusic/",
+//     },
+//     {
+//         id: 6,
+//         title: "🍔 Foodio – Scalable MERN Food Delivery System",
+//         description:
+//             "Foodio is a scalable full-stack food delivery platform built with the MERN stack. It enables users to browse menus, manage carts, and place orders with secure payment integration. The application uses WebSockets (Socket.io) for real-time order status updates and integrates map services for live delivery tracking. Designed with a modular backend and responsive frontend, the project highlights RESTful API development, real-time communication, and production-level application architecture.",
+//         image: foodioImage,
+//         tags: ["MongoDB", "Express JS", "React JS", "Node JS", "Redux Toolkit", "Socket.io", "Razor Pay Payment Gateway API", "LeafLet Map API"],
+//         github: "https://github.com/your-username/foodio",
+//         webapp: "https://foodio-food.onrender.com/",
+//     }

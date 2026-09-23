@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
+import Loading from '../Loading';
 const Contact = () => {
     const [isSent, setIsSent] = useState(false);
     const form = useRef();
@@ -9,6 +10,7 @@ const Contact = () => {
     const public_key = import.meta.env.VITE_Public_KEY;
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSent(true);
         emailjs
             .sendForm(
                 service_key,
@@ -18,7 +20,7 @@ const Contact = () => {
             }
             )
             .then(() => {
-                setIsSent(true);
+                setIsSent(false);
                 form.current.reset();
                 toast.success("Message sent successfully! ✅", {
                     position: "top-right",
@@ -121,7 +123,7 @@ const Contact = () => {
                         </div>
 
                         {/* Submit Button */}
-                        <button
+                        {isSent ? <Loading /> : <button
                             type="submit"
                             className="w-full relative group overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-r 
                                 from-purple-600 to-purple-500 text-white font-semibold text-lg
@@ -131,7 +133,8 @@ const Contact = () => {
                             <span className="relative z-10 ">Send Message</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-400 
                                 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                        </button>
+                        </button>}
+
                     </form>
                 </div>
             </div>

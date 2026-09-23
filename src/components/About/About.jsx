@@ -8,7 +8,7 @@ const About = () => {
             id="about"
             className="relative min-h-screen flex items-center overflow-hidden
             px-[7vw] md:px-[7vw] lg:px-[10vw] xl:px-[12vw]
-            py-20 md:py-24 font-sans"
+            py-20 md:py-24 font-sans .clip-path-custom"
         >
             {/* Background Glow */}
             <div className="absolute top-20 left-0 w-72 h-72 bg-[#8245ec]/10 rounded-full blur-[120px] pointer-events-none" />

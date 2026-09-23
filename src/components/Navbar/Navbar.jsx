@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react'
 import { FiMenu, FiX, } from 'react-icons/fi'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeTab, setActiveSection] = useState("");
@@ -87,6 +87,14 @@ const Navbar = () => {
                     >
                         <FaLinkedin size={24} />
                     </a>
+                    <a
+                        href="mailto:surajitmandal5631@gmail.com?subject=Job%20Opportunity&body=Hi%20Surajit,%0A%0AI%20came%20across%20your%20portfolio..."
+                        className="text-gray-300 hover:text-[#8245ec] transition-all duration-300 hover:scale-110"
+                        aria-label="Send me an email"
+                    >
+                        <FaEnvelope size={24} />
+                    </a>
+
                 </div>
 
                 {/* Mobile menu */}

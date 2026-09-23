@@ -1,176 +1,429 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { projects } from '../../constants'
+
 const Projects = () => {
-    const [selectedProject, setSelectedProject] = useState(null);
+    // Show only the projects you want to feature.
+    // Change these IDs according to your constants.js / constants.ts
+    const featuredProjects = projects.slice(0, 3)
 
-    const handleOpenModel = (project) => {
-        setSelectedProject(project);
-    }
+    return (
+        <section
+            id="projects"
+            className="
+                relative py-24 px-[5vw] lg:px-[10vw]
+                font-sans
+                bg-[#08080c]
+                overflow-hidden
+            "
+        >
+            {/* Background Glow */}
+            <div
+                className="
+                    absolute top-20 left-1/2 -translate-x-1/2
+                    w-[500px] h-[300px]
+                    bg-[#8245ec]/10
+                    blur-[120px]
+                    rounded-full
+                    pointer-events-none
+                "
+            />
 
-    const handleCloseModal = () => {
-        setSelectedProject(null);
-    }
-    return (<section id='projects' className='relative py-10 pb-24 px-[4vw] md:px-[5vw] lg:px-[12vw] font-sans bg-gradient-to-b from-[#0a0a0a] via-[#1a1238] to-[#0a0a0a] overflow-hidden clip-path-custom3'>
-        {/* section title */}
-        <div className="relative z-10 text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white bg-clip-text bg-gradient-to-r from-purple-500 to-purple-300">PROJECTS</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 mx-auto mt-4"></div>
-            <p className="text-gray-400 mt-4 text-lg font-semibold">
-                A showcase of the projects I have worked on, highlighting my skills
-                and experience in various technologies
-            </p>
-        </div>
+            <div
+                className="
+                    absolute top-[40%] -left-40
+                    w-72 h-72
+                    bg-purple-600/5
+                    blur-[100px]
+                    rounded-full
+                    pointer-events-none
+                "
+            />
 
-        {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-            {projects.map((project, index) => (
-                <div
-                    key={project.id}
-                    className="group bg-gray-900/60 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-700/30 
-                    hover:border-purple-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(130,69,236,0.2)] cursor-pointer"
-                    style={{
-                        animation: `fadeIn 0.5s ease-out forwards ${index * 0.2}s`
-                    }}
-                    onClick={() => handleOpenModel(project)}
+            {/* Section Header */}
+            <div className="relative z-10 text-center mb-16 md:mb-20">
+                <span
+                    className="
+                        inline-flex items-center gap-2
+                        px-4 py-2 mb-5
+                        rounded-full
+                        border border-[#8245ec]/20
+                        bg-[#8245ec]/5
+                        text-[#a78bfa]
+                        text-xs sm:text-sm
+                        font-medium
+                    "
                 >
-                    <div className="relative overflow-hidden h-48">
-                        <video
-                            src={project.image}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
-                    </div>
-                    <div className="p-6 space-y-4">
-                        <h3 className="text-xl font-bold text-purple-400">{project.title}</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 pt-2">
-                            {project.tags.map((tag, index) => (
-                                <span
-                                    key={index}
-                                    className="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 
-                                    rounded-full border border-purple-500/20"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>        {/* Modal Container */}
-        {selectedProject && (
-            <div className="fixed inset-x-0 top-[80px] bottom-0 z-999 flex items-start justify-center p-4 overflow-y-auto animate-[fadeIn_0.3s_ease-out]"
-                style={{
-                    backdropFilter: 'blur(8px)',
-                    background: 'radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)'
-                }}
-                onClick={handleCloseModal}
-            >
-                <div
-                    className="relative bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-xl rounded-2xl 
-                        shadow-[0_0_50px_rgba(130,69,236,0.15)] lg:w-[80%] w-[85%] max-w-2xl my-8
-                        border border-purple-500/10 animate-[slideIn_0.3s_ease-out]"
-                    onClick={(e) => e.stopPropagation()}
+                    <span className="w-2 h-2 rounded-full bg-[#8245ec] animate-pulse" />
+                    Featured Work
+                </span>
+
+                <h2
+                    className="
+                        text-4xl sm:text-5xl md:text-6xl
+                        font-bold
+                        text-white
+                        tracking-tight
+                    "
                 >
-                    {/* Close Button */}
-                    <button
-                        onClick={handleCloseModal}
-                        className="absolute top-3 right-3 z-[999] w-8 h-8 rounded-full 
-                            flex items-center justify-center text-2xl
-                            text-gray-400 hover:text-purple-400 
-                            border border-gray-700/50 hover:border-purple-500/30
-                            hover:bg-purple-500/10 hover:scale-110 hover:rotate-90 
-                            transition-all duration-300 "
-                        aria-label="Close modal"
-                    >
-                        ×
-                    </button>
+                    My Projects
+                </h2>
 
-                    {/* Purple glow effects */}
-                    <div className="absolute top-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent"></div>
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl"></div>
+                <div
+                    className="
+                        w-20 h-[3px]
+                        bg-gradient-to-r
+                        from-purple-600
+                        via-[#8245ec]
+                        to-purple-400
+                        mx-auto mt-5
+                        rounded-full
+                    "
+                />
 
-                    <div className="p-6">
-                        <h3 className="text-lg md:text-xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-4">
-                            {selectedProject.title}
-                        </h3>
-
-                        <div className="w-full flex justify-center relative group mb-6">
-                            <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <video
-                                src={selectedProject.image} className="w-full h-[180px] md:h-[220px] object-contain rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.3)]
-                                    transition-transform duration-500 group-hover:scale-105"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-
-                            />
-                        </div>
-
-                        <div className="space-y-4">
-                            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                                {selectedProject.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2">
-                                {selectedProject.tags.map((tag, index) => (
-                                    <span
-                                        key={index}
-                                        className="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 
-                                            rounded-full border border-purple-500/20 hover:bg-purple-500/20 
-                                            transition-colors duration-300"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <div className="flex gap-4 pt-2">
-                                <a
-                                    href={selectedProject.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-1/2 group relative overflow-hidden bg-gray-800/80 
-                                        text-gray-300 px-4 py-2.5 rounded-xl text-sm font-semibold text-center
-                                        transition-all duration-300 hover:shadow-[0_0_20px_rgba(130,69,236,0.2)]
-                                        border border-gray-700/50 hover:border-purple-500/30"
-                                >
-                                    <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                                        View Code
-                                    </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-purple-500/20 
-                                        translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    </div>
-                                </a>
-                                <a
-                                    href={selectedProject.webapp}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-1/2 group relative overflow-hidden bg-gradient-to-r from-purple-600 to-purple-500
-                                        text-white px-4 py-2.5 rounded-xl text-sm font-semibold text-center
-                                        transition-all duration-300 hover:shadow-[0_0_20px_rgba(130,69,236,0.3)]
-                                        border border-purple-500/30 hover:border-purple-400/50"
-                                >
-                                    <span className="relative z-10">
-                                        View Live
-                                    </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-400 
-                                        translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p
+                    className="
+                        text-gray-400
+                        mt-6
+                        text-sm sm:text-base md:text-lg
+                        max-w-2xl
+                        mx-auto
+                        leading-relaxed
+                    "
+                >
+                    A selection of full-stack applications I have designed
+                    and built using modern web technologies.
+                </p>
             </div>
-        )}
-    </section>
+
+            {/* Projects */}
+            <div className="relative z-10 max-w-6xl mx-auto space-y-10">
+                {featuredProjects.map((project, index) => (
+                    <article
+                        key={project.id}
+                        className="
+                            group relative
+                            overflow-hidden
+                            rounded-[28px]
+                            border border-white/[0.08]
+                            bg-gradient-to-br
+                            from-white/[0.055]
+                            via-[#111116]/90
+                            to-[#09090d]
+                            backdrop-blur-xl
+                            transition-all duration-500
+                            hover:border-[#8245ec]/35
+                            hover:shadow-[0_25px_80px_rgba(130,69,236,0.12)]
+                        "
+                        style={{
+                            animation: `fadeIn 0.7s ease-out forwards ${index * 0.15}s`,
+                        }}
+                    >
+                        {/* Top Accent */}
+                        <div
+                            className="
+                                absolute top-0 left-[10%] right-[10%]
+                                h-[1px]
+                                bg-gradient-to-r
+                                from-transparent
+                                via-[#8245ec]/60
+                                to-transparent
+                                opacity-60
+                                group-hover:opacity-100
+                                transition-opacity duration-500
+                            "
+                        />
+
+                        {/* Glow */}
+                        <div
+                            className="
+                                absolute -top-32 -right-32
+                                w-72 h-72
+                                rounded-full
+                                bg-[#8245ec]/10
+                                blur-[100px]
+                                opacity-0
+                                group-hover:opacity-100
+                                transition-opacity duration-700
+                                pointer-events-none
+                            "
+                        />
+
+                        <div className="grid lg:grid-cols-2 min-h-[420px]">
+
+                            {/* Project Preview */}
+                            <div
+                                className={`
+                                    relative
+                                    min-h-[280px] lg:min-h-full
+                                    overflow-hidden
+                                    ${index % 2 !== 0 ? 'lg:order-2' : ''}
+                                `}
+                            >
+                                {/* Image/Video */}
+                                <div className="absolute inset-0 p-4 sm:p-6">
+                                    <div
+                                        className="
+                                            relative
+                                            w-full h-full
+                                            min-h-[250px]
+                                            overflow-hidden
+                                            rounded-2xl
+                                            border border-white/[0.08]
+                                            bg-black/30
+                                        "
+                                    >
+                                        <video
+                                            src={project.image}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="
+                                                w-full h-full
+                                                object-cover
+                                                transition-transform
+                                                duration-700
+                                                group-hover:scale-[1.04]
+                                            "
+                                        />
+
+                                        {/* Image Overlay */}
+                                        <div
+                                            className="
+                                                absolute inset-0
+                                                bg-gradient-to-t
+                                                from-black/70
+                                                via-black/10
+                                                to-transparent
+                                            "
+                                        />
+
+                                        {/* Project Number */}
+                                        <div
+                                            className="
+                                                absolute top-4 left-4
+                                                w-11 h-11
+                                                rounded-xl
+                                                flex items-center justify-center
+                                                border border-white/10
+                                                bg-black/40
+                                                backdrop-blur-md
+                                                text-white
+                                                text-sm
+                                                font-bold
+                                            "
+                                        >
+                                            {String(index + 1).padStart(2, '0')}
+                                        </div>
+
+                                        {/* Preview Label */}
+                                        <div
+                                            className="
+                                                absolute bottom-4 left-4
+                                                px-3 py-1.5
+                                                rounded-lg
+                                                bg-black/50
+                                                backdrop-blur-md
+                                                border border-white/10
+                                                text-xs
+                                                text-gray-300
+                                            "
+                                        >
+                                            Project Preview
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Project Content */}
+                            <div
+                                className={`
+                                    relative
+                                    flex flex-col
+                                    justify-center
+                                    p-6 sm:p-8 lg:p-10
+                                    ${index % 2 !== 0 ? 'lg:order-1' : ''}
+                                `}
+                            >
+                                {/* Category */}
+                                <div className="flex items-center gap-3 mb-5">
+                                    <span
+                                        className="
+                                            text-xs
+                                            font-semibold
+                                            uppercase
+                                            tracking-[0.2em]
+                                            text-[#a78bfa]
+                                        "
+                                    >
+                                        Full Stack Project
+                                    </span>
+
+                                    <div className="h-px w-10 bg-[#8245ec]/40" />
+                                </div>
+
+                                {/* Title */}
+                                <h3
+                                    className="
+                                        text-2xl sm:text-3xl md:text-4xl
+                                        font-bold
+                                        text-white
+                                        tracking-tight
+                                        group-hover:text-[#c4b5fd]
+                                        transition-colors duration-300
+                                    "
+                                >
+                                    {project.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p
+                                    className="
+                                        mt-5
+                                        text-gray-400
+                                        text-sm sm:text-base
+                                        leading-7
+                                        max-w-xl
+                                    "
+                                >
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Stack */}
+                                <div className="flex flex-wrap gap-2 mt-6">
+                                    {project.tags.slice(0, 6).map((tag, tagIndex) => (
+                                        <span
+                                            key={tagIndex}
+                                            className="
+                                                px-3 py-1.5
+                                                rounded-lg
+                                                border border-white/[0.08]
+                                                bg-white/[0.035]
+                                                text-xs sm:text-sm
+                                                text-gray-300
+                                                transition-all duration-300
+                                                hover:border-[#8245ec]/30
+                                                hover:bg-[#8245ec]/10
+                                                hover:text-purple-200
+                                            "
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Buttons */}
+                                <div className="flex flex-wrap gap-3 mt-8">
+                                    <a
+                                        href={project.webapp}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+                                            group/button
+                                            inline-flex
+                                            items-center
+                                            justify-center
+                                            gap-2
+                                            px-5 py-2.5
+                                            rounded-xl
+                                            bg-gradient-to-r
+                                            from-purple-600
+                                            to-[#8245ec]
+                                            text-white
+                                            text-sm
+                                            font-semibold
+                                            border border-purple-400/20
+                                            shadow-[0_8px_25px_rgba(130,69,236,0.2)]
+                                            hover:shadow-[0_12px_35px_rgba(130,69,236,0.35)]
+                                            hover:-translate-y-0.5
+                                            transition-all duration-300
+                                        "
+                                    >
+                                        View Live
+                                        <span
+                                            className="
+                                                transition-transform
+                                                duration-300
+                                                group-hover/button:translate-x-1
+                                            "
+                                        >
+                                            ↗
+                                        </span>
+                                    </a>
+                                    {project.id == 0 ? <button></button> : <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+                                            inline-flex
+                                            items-center
+                                            justify-center
+                                            gap-2
+                                            px-5 py-2.5
+                                            rounded-xl
+                                            bg-white/[0.04]
+                                            text-gray-300
+                                            text-sm
+                                            font-semibold
+                                            border border-white/[0.09]
+                                            hover:bg-white/[0.08]
+                                            hover:border-[#8245ec]/30
+                                            hover:text-white
+                                            hover:-translate-y-0.5
+                                            transition-all duration-300
+                                        "
+                                    >
+                                        GitHub
+                                        <span>↗</span>
+                                    </a>}
+
+                                </div>
+
+                                {/* Bottom Project Number */}
+                                <div
+                                    className="
+                                        absolute
+                                        bottom-5 right-7
+                                        text-6xl
+                                        font-black
+                                        text-white/[0.025]
+                                        select-none
+                                        pointer-events-none
+                                    "
+                                >
+                                    {String(index + 1).padStart(2, '0')}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="relative z-10 flex justify-center mt-14">
+                <a
+                    href="https://github.com/Surajitmanldal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                        inline-flex items-center gap-2
+                        px-6 py-3
+                        rounded-xl
+                        border border-[#8245ec]/25
+                        bg-[#8245ec]/5
+                        text-purple-300
+                        text-sm font-semibold
+                        hover:bg-[#8245ec]/10
+                        hover:border-[#8245ec]/40
+                        hover:text-white
+                        transition-all duration-300
+                    "
+                >
+                    View More Projects
+                    <span>↗</span>
+                </a>
+            </div>
+        </section>
     )
 }
 
