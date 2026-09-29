@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Education from "./components/Education/Education";
 import BlurBlob from "./components/BlurBlob";
+import Chatbot from "./components/chatbot/Chatbot";
 const App = () => {
   return (
     <div className="bg-[#050414]">
@@ -22,6 +23,7 @@ const App = () => {
         <Education />
         <Contact />
         <Footer />
+        <Chatbot />
       </div>
     </div>
 
