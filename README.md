@@ -61,7 +61,7 @@ Gemini LLM
 AI Response
       ↓
 React Chatbot
-
+```
 ## 🧰 Tech Stack
 
 ### Frontend
