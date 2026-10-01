@@ -51,7 +51,7 @@ const Chatbot = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/chat",
+                "https://portfolio-backend-ge1d.onrender.com/api/chat",
                 {
                     message: userMessage,
                 }
