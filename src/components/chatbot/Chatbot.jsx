@@ -283,7 +283,7 @@ const Chatbot = () => {
 
                     {/* Disclaimer */}
                     <p className="chatbot-disclaimer">
-                        Powered by Surajit's portfolio · AI responses may vary
+                        AI-powered portfolio assistant · Responses may take a moment
                     </p>
 
                 </section>
