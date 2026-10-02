@@ -61,7 +61,9 @@ import qrcodeVideo from './assets/work_logo/qrcodeVideo.mp4'
 import musicVideo from './assets/work_logo/musicVideo.mp4'
 import foodioImage from './assets/work_logo/foodioImage.png'
 import nextGuardVideo from './assets/work_logo/nexGuardVideo.mp4'
+import nexguardImg from './assets/work_logo/nexguardPoster.png'
 import virtualAssistantVideo from './assets/work_logo/virtualAssistantVideo.mp4'
+import assistant from './assets/work_logo/assistant.png'
 
 export const SkillsInfo = [
     {
@@ -177,6 +179,7 @@ export const projects = [
         description:
             "NexGuard is a full-stack VPN management platform that allows users to create, manage, and configure VPN devices through a web interface. It uses WireGuard on an AWS EC2 server to dynamically generate VPN keys, configure peers, and provide downloadable client configurations. The project demonstrates secure authentication, server-side automation, database management, and integration between a Next.js application and a Linux-based VPN server.",
         image: nextGuardVideo,
+        poster: nexguardImg,
         tags: [
             "Next.js",
             "TypeScript",
@@ -217,6 +220,7 @@ export const projects = [
         description:
             "Virtual Assistant is an AI-powered web application that allows users to interact with an intelligent assistant through text and voice commands. Built with React and Node.js, the application integrates Gemini AI for generating responses and uses browser speech technologies to support voice-based interaction. It also includes authentication, cloud image storage, and a responsive interface designed for an interactive assistant experience.",
         image: virtualAssistantVideo,
+        poster: assistant,
         tags: [
             "React JS",
             "Tailwind CSS",
