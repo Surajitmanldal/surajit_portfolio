@@ -144,7 +144,7 @@ const Chatbot = () => {
 
                             <p>
                                 <span className="online-dot" />
-                                Online · typically replies instantly
+                                Online · AI Assistant · Ready to help
                             </p>
                         </div>
 

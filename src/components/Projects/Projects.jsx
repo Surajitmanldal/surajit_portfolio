@@ -1,10 +1,73 @@
-import React from 'react'
-import { projects } from '../../constants'
+import React, { useEffect, useRef, useState } from "react";
+import { projects } from "../../constants";
+
+/*
+ * LazyVideo
+ * ----------
+ * The video will NOT load immediately when the page loads.
+ *
+ * It starts loading when it gets close to the viewport.
+ * rootMargin: "200px" means the video starts loading
+ * roughly 200px before the user reaches it.
+ */
+const LazyVideo = ({ src, poster, className, alt }) => {
+    const videoRef = useRef(null);
+    const [shouldLoad, setShouldLoad] = useState(false);
+
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        // If IntersectionObserver is not supported,
+        // load the video normally.
+        if (!("IntersectionObserver" in window)) {
+            setShouldLoad(true);
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShouldLoad(true);
+
+                    // We only need to observe it until
+                    // the video has been requested.
+                    observer.disconnect();
+                }
+            },
+            {
+                rootMargin: "200px 0px",
+                threshold: 0.01,
+            }
+        );
+
+        observer.observe(video);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    return (
+        <video
+            ref={videoRef}
+            src={shouldLoad ? src : undefined}
+            poster={poster}
+            autoPlay={shouldLoad}
+            loop
+            muted
+            playsInline
+            preload="none"
+            aria-label={alt}
+            className={className}
+        />
+    );
+};
 
 const Projects = () => {
     // Show only the projects you want to feature.
-    // Change these IDs according to your constants.js / constants.ts
-    const featuredProjects = projects.slice(0, 3)
+    const featuredProjects = projects.slice(0, 3);
 
     return (
         <section
@@ -156,10 +219,10 @@ const Projects = () => {
                                     relative
                                     min-h-[280px] lg:min-h-full
                                     overflow-hidden
-                                    ${index % 2 !== 0 ? 'lg:order-2' : ''}
+                                    ${index % 2 !== 0 ? "lg:order-2" : ""}
                                 `}
                             >
-                                {/* Image/Video */}
+                                {/* Image / Video */}
                                 <div className="absolute inset-0 p-4 sm:p-6">
                                     <div
                                         className="
@@ -172,12 +235,12 @@ const Projects = () => {
                                             bg-black/30
                                         "
                                     >
-                                        <video
+
+                                        {/* Lazy-loaded project video */}
+                                        <LazyVideo
                                             src={project.image}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
+                                            poster={project.poster}
+                                            alt={`${project.title} project preview`}
                                             className="
                                                 w-full h-full
                                                 object-cover
@@ -195,6 +258,7 @@ const Projects = () => {
                                                 from-black/70
                                                 via-black/10
                                                 to-transparent
+                                                pointer-events-none
                                             "
                                         />
 
@@ -213,7 +277,7 @@ const Projects = () => {
                                                 font-bold
                                             "
                                         >
-                                            {String(index + 1).padStart(2, '0')}
+                                            {String(index + 1).padStart(2, "0")}
                                         </div>
 
                                         {/* Preview Label */}
@@ -242,9 +306,10 @@ const Projects = () => {
                                     flex flex-col
                                     justify-center
                                     p-6 sm:p-8 lg:p-10
-                                    ${index % 2 !== 0 ? 'lg:order-1' : ''}
+                                    ${index % 2 !== 0 ? "lg:order-1" : ""}
                                 `}
                             >
+
                                 {/* Category */}
                                 <div className="flex items-center gap-3 mb-5">
                                     <span
@@ -291,92 +356,104 @@ const Projects = () => {
 
                                 {/* Tech Stack */}
                                 <div className="flex flex-wrap gap-2 mt-6">
-                                    {project.tags.slice(0, 6).map((tag, tagIndex) => (
-                                        <span
-                                            key={tagIndex}
-                                            className="
-                                                px-3 py-1.5
-                                                rounded-lg
-                                                border border-white/[0.08]
-                                                bg-white/[0.035]
-                                                text-xs sm:text-sm
-                                                text-gray-300
-                                                transition-all duration-300
-                                                hover:border-[#8245ec]/30
-                                                hover:bg-[#8245ec]/10
-                                                hover:text-purple-200
-                                            "
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                                    {project.tags
+                                        .slice(0, 6)
+                                        .map((tag, tagIndex) => (
+                                            <span
+                                                key={`${project.id}-${tagIndex}`}
+                                                className="
+                                                    px-3 py-1.5
+                                                    rounded-lg
+                                                    border border-white/[0.08]
+                                                    bg-white/[0.035]
+                                                    text-xs sm:text-sm
+                                                    text-gray-300
+                                                    transition-all duration-300
+                                                    hover:border-[#8245ec]/30
+                                                    hover:bg-[#8245ec]/10
+                                                    hover:text-purple-200
+                                                "
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
                                 </div>
 
                                 {/* Buttons */}
                                 <div className="flex flex-wrap gap-3 mt-8">
-                                    <a
-                                        href={project.webapp}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="
-                                            group/button
-                                            inline-flex
-                                            items-center
-                                            justify-center
-                                            gap-2
-                                            px-5 py-2.5
-                                            rounded-xl
-                                            bg-gradient-to-r
-                                            from-purple-600
-                                            to-[#8245ec]
-                                            text-white
-                                            text-sm
-                                            font-semibold
-                                            border border-purple-400/20
-                                            shadow-[0_8px_25px_rgba(130,69,236,0.2)]
-                                            hover:shadow-[0_12px_35px_rgba(130,69,236,0.35)]
-                                            hover:-translate-y-0.5
-                                            transition-all duration-300
-                                        "
-                                    >
-                                        View Live
-                                        <span
+
+                                    {/* Live Project */}
+                                    {project.webapp && (
+                                        <a
+                                            href={project.webapp}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`View ${project.title} live project`}
                                             className="
-                                                transition-transform
-                                                duration-300
-                                                group-hover/button:translate-x-1
+                                                group/button
+                                                inline-flex
+                                                items-center
+                                                justify-center
+                                                gap-2
+                                                px-5 py-2.5
+                                                rounded-xl
+                                                bg-gradient-to-r
+                                                from-purple-600
+                                                to-[#8245ec]
+                                                text-white
+                                                text-sm
+                                                font-semibold
+                                                border border-purple-400/20
+                                                shadow-[0_8px_25px_rgba(130,69,236,0.2)]
+                                                hover:shadow-[0_12px_35px_rgba(130,69,236,0.35)]
+                                                hover:-translate-y-0.5
+                                                transition-all duration-300
                                             "
                                         >
-                                            ↗
-                                        </span>
-                                    </a>
-                                    {project.id == 0 ? <button></button> : <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="
-                                            inline-flex
-                                            items-center
-                                            justify-center
-                                            gap-2
-                                            px-5 py-2.5
-                                            rounded-xl
-                                            bg-white/[0.04]
-                                            text-gray-300
-                                            text-sm
-                                            font-semibold
-                                            border border-white/[0.09]
-                                            hover:bg-white/[0.08]
-                                            hover:border-[#8245ec]/30
-                                            hover:text-white
-                                            hover:-translate-y-0.5
-                                            transition-all duration-300
-                                        "
-                                    >
-                                        GitHub
-                                        <span>↗</span>
-                                    </a>}
+                                            View Live
 
+                                            <span
+                                                className="
+                                                    transition-transform
+                                                    duration-300
+                                                    group-hover/button:translate-x-1
+                                                "
+                                            >
+                                                ↗
+                                            </span>
+                                        </a>
+                                    )}
+
+                                    {/* GitHub */}
+                                    {project.id !== 0 && project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`View ${project.title} source code on GitHub`}
+                                            className="
+                                                inline-flex
+                                                items-center
+                                                justify-center
+                                                gap-2
+                                                px-5 py-2.5
+                                                rounded-xl
+                                                bg-white/[0.04]
+                                                text-gray-300
+                                                text-sm
+                                                font-semibold
+                                                border border-white/[0.09]
+                                                hover:bg-white/[0.08]
+                                                hover:border-[#8245ec]/30
+                                                hover:text-white
+                                                hover:-translate-y-0.5
+                                                transition-all duration-300
+                                            "
+                                        >
+                                            GitHub
+                                            <span>↗</span>
+                                        </a>
+                                    )}
                                 </div>
 
                                 {/* Bottom Project Number */}
@@ -391,7 +468,7 @@ const Projects = () => {
                                         pointer-events-none
                                     "
                                 >
-                                    {String(index + 1).padStart(2, '0')}
+                                    {String(index + 1).padStart(2, "0")}
                                 </div>
                             </div>
                         </div>
@@ -405,6 +482,7 @@ const Projects = () => {
                     href="https://github.com/Surajitmanldal"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="View more projects on GitHub"
                     className="
                         inline-flex items-center gap-2
                         px-6 py-3
@@ -424,7 +502,7 @@ const Projects = () => {
                 </a>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;
